@@ -13,6 +13,9 @@ def home(request):
 def predict(request):
     return render(request, "predict.html")
 
+def accueil(request):
+    return render(request, "accueil.html")
+
 def result(request):
     data = pd.read_csv(r"C:\Users\irsitogo\Desktop\hSOSSOU\Django\USA_Housing.csv")
     data = data.drop(['Address'], axis=1)
@@ -31,10 +34,7 @@ def result(request):
     pred = model.predict(np.array([var1, var2, var3, var4, var5]).reshape(1,-1))
     pred = round(pred[0])
     
-    price = "La prédiction est de "+str(pred)+" FCFA"
+    #price = "La prédiction est de "+str(pred)+" FCFA"
+    price = str(pred)
     
-    
-    return render(request, "predict.html", {"result2":price})
-
-def base(request):
-    return render(request, "base.html")
+    return render(request, "pred.html", {"result2":price, "v1":var1, "v2":var2, "v3":var3, "v4":var4, "v5":var5,})

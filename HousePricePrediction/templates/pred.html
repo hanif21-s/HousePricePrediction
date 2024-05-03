@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<main id="main">
+
+    <!-- ======= Pricing Section ======= -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+  
+          <div class="section-title">
+            <span>Résultat de la prédiction</span>
+            <h2>Résultat de la prédiction</h2>
+          </div>
+  
+          <div class="row">
+  
+            <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="150">
+              <div class="box">
+                
+              </div>
+            </div>
+  
+            <div class="col-lg-4 col-md-6 mt-4 mt-md-0" data-aos="zoom-in">
+              <div class="box featured">
+                <ul>
+                  <li>Revenu moyenne de la zone : {{v1}} FCFA</li>
+                  <li>Age moyenne de la maison : {{v2}} ans</li>
+                  <li>Nombre moyenne de chambres : {{v3}} chambres</li>
+                  <li>Nombre moyenne de Chambres à coucher : {{v4}} chambres</li>
+                  <li>Population moyenne de la zone : {{v5}} habitants</li>
+                </ul>
+                <h4>{{result2}} <sup>FCFA</sup></h4>
+                <div class="btn-wrap">
+                  <a href="{% url 'home' %}" class="btn-buy">Retour à la page d'accueil</a>
+                </div>
+              </div>
+            </div>
+  
+            <div class="col-lg-4 col-md-6 mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="150">
+              <div class="box">
+                
+              </div>
+            </div>
+  
+          </div>
+  
+        </div>
+    </section><!-- End Pricing Section -->
+
+  </main><!-- End #main -->
+{% endblock content %}
